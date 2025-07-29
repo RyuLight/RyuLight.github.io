@@ -71,6 +71,12 @@ footer img{
     margin-left: 40px;
     background-color: rgba(0,0,0, 0.4);
     z-index: 1;
+    transform: translate(-105%, 0px);
+    transition: 0.35s ease;
+}
+
+#menu.panelAnim{
+    transform: translate(0px, 0px);
 }
 
 #menu button{
@@ -80,20 +86,51 @@ footer img{
     cursor: pointer;
 }
 
+#menu button#closeMenu{
+    position: absolute;
+    width: 15%;
+    text-align: center;
+    transform: translate(160px, 0px);
+}
+
 section.page{
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
     border-style: solid;
-    width: 70%;
+    width: 90%;
     min-height: 700px;
     max-height: 100%;
+    margin: auto;
     margin-top: 40px;
-    margin-left: 26%;
     padding: 1%;
     background-color: rgba(0,0,0, 0.4);
     transform: translate(0px, 0px);
+}
+
+div#test{
+    display: none;
+    position: absolute;
+    text-align: center;
+    border: solid;
+    min-width: 200px;
+    min-height: 150px;
+    background-color: rgba(0,0,0, 0.4);
+}
+
+div#test p{
+    margin: 0px;
+    padding: 5px;
+}
+
+span#tips1{
+    color: red;
+    text-decoration: underline;
+}
+
+span#tips1:hover{
+    color: white;
 }
 
 #minigame{
@@ -104,6 +141,7 @@ section.page{
     border-style: solid;
     margin-top: 50px;
     background-color: rgba(0,0,0, 0.4);
-    min-height: 800px;
+    min-height: 700px;
     max-height: 100%;
+    padding: 2%;
 }
