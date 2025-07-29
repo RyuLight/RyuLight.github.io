@@ -9,6 +9,28 @@ document.addEventListener("click", function()
     bgm.muted = false;
 }, {once: true});
 
+// TESTING SHIT BELOW
+    const textHover = document.querySelector("#tips1");
+    const test = document.querySelector("#test");
+    textHover.onmouseover = function ()
+    {
+        test.style.display = "block";
+    };
+
+    textHover.onmouseout = function ()
+    {
+        test.style.display = "none";
+    };
+
+    document.addEventListener("mousemove", function(e){
+        test.style.top = (e.pageY - 300)+ "px";
+        test.style.left = (e.pageX - 175) + "px";
+    });
+
+
+
+    // TESTING SHIT ABOVE
+
 document.addEventListener("DOMContentLoaded", function(){
     const allButtons = document.querySelectorAll("#menu button[data-id]");
     const pages = document.querySelectorAll("main .page");
@@ -22,52 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var isOpen = true;
 
 
-    // TESTING SHIT BELOW
-    const textHover = document.querySelector("#tips1");
-    const test = document.querySelector("#test");
-    textHover.onmouseover = function ()
-    {
-        test.style.display = "inline";
-    };
-
-    textHover.onmouseout = function ()
-    {
-        test.style.display = "none";
-    };
-
-    function onHover(){
-        try{
-            document.createEvent("HoverEvent");
-            return true;
-        }
-        catch(e){
-            alert(e);
-            return false;
-        }
-    }
-
-    const move = (e) =>{
-        try{
-            var x = !onHover() ? e.pageX : e.touches[0].pageX;
-            var y = !onHover() ? e.pageY : e.touches[0].pageY;
-        }
-        catch(e)
-        {
-            alert(e);
-        }
-        test.style.left = x + "px";
-        test.style.top = y + "px";
-    };
-
-    document.addEventListener("mousemove", (e)=> {
-        move(e);
-    });
-
-
-
-
-
-    // TESTING SHIT ABOVE
+    
 
     mutebtn.style.backgroundColor = "white";
     closebtn.style.backgroundColor = "white";
@@ -97,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function(){
     pages.forEach(section => {
         section.style.display="none"
     });
+    
     startPage.style.display="flex";
 
     allButtons.forEach(button => {
@@ -112,10 +90,16 @@ document.addEventListener("DOMContentLoaded", function(){
                 button.style.backgroundColor = "darkgray";
             }
 
-            pages.forEach(section => section.style.display="none");
+            pages.forEach(section => {
+                section.style.display="none";
+            });
 
             const selectedPage = document.getElementById(selectedBtn);
             selectedPage.style.display="flex";
+
+            requestAnimationFrame(() => {
+                selectedPage.classList.toggle("moveAnim");
+            });
             MenuAnim();
     })
     });
@@ -128,13 +112,11 @@ document.addEventListener("DOMContentLoaded", function(){
     function MenuAnim(){
         if (isOpen)
             {
-                console.log("Menu is closed");
                 isOpen = false;
                 closebtn.textContent = "<";
             }
             else
             {
-                console.log("Menu is opened");
                 isOpen = true;
                 closebtn.textContent = ">";
             }

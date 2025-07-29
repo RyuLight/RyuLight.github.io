@@ -106,7 +106,19 @@ section.page{
     margin-top: 40px;
     padding: 1%;
     background-color: rgba(0,0,0, 0.4);
+    transform: translate(1800px, 0px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.page.moveAnim{
     transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+section#startPage{
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 div#test{
@@ -114,9 +126,12 @@ div#test{
     position: absolute;
     text-align: center;
     border: solid;
-    min-width: 200px;
+    min-width: 50px;
     min-height: 150px;
-    background-color: rgba(0,0,0, 0.4);
+    background-color: rgba(0,0,0, 0.6);
+    transition: 0.05s ease-out;
+    top: 0;
+    left: 0;
 }
 
 div#test p{
@@ -125,7 +140,7 @@ div#test p{
 }
 
 span#tips1{
-    color: red;
+    color: aquamarine;
     text-decoration: underline;
 }
 
@@ -144,4 +159,13 @@ span#tips1:hover{
     min-height: 700px;
     max-height: 100%;
     padding: 2%;
+}
+
+div.game{
+    background-color: rgb(0, 206, 110);
+    border:solid;
+    min-height: 750px;
+    max-height: 80%;
+    min-width: 1500px;
+    max-width: 80%;
 }
