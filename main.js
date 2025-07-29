@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function(){
     const closebtn = document.querySelector("#closeMenu");
     const menu = document.querySelector("#menu");
     const funnybtn = document.querySelector("#funnybtn");
+    funnybtn.style.display = "none";
+    setTimeout(function(){
+        funnybtn.style.display = "inline";
+    }, 20000);
+
 
     var isOpen = true;
 
