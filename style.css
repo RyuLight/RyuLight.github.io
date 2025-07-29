@@ -3,11 +3,11 @@ body{
     padding:0;
     margin:0;
     background-image: url(Images/sleep1.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: 100%;
 }
 
-p, h1 {
+p, h1, h2 {
     color: white;
 }
 
@@ -22,8 +22,8 @@ p, h1 {
 }
 
 header{
-    text-align:center;
-    font-size: 3em;
+    font-size:2.5em;
+    text-align: center;
     border-style: solid;
     margin:0;
     padding-top: 1%;
@@ -65,12 +65,12 @@ footer img{
     justify-content: center;
     align-items: center;
     border-style: solid;
-    padding: 50px;
-    padding-bottom: 60px;
+    padding: 2%;
     gap: 25px;
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-top: 40px;
+    margin-left: 40px;
     background-color: rgba(0,0,0, 0.4);
+    z-index: 1;
 }
 
 #menu button{
@@ -86,9 +86,12 @@ section.page{
     /* justify-content: center; */
     align-items: center;
     border-style: solid;
-    width: 72%;
-    margin-top: 50px;
-    margin-left: 475px;
+    width: 70%;
+    min-height: 700px;
+    max-height: 100%;
+    margin-top: 40px;
+    margin-left: 26%;
+    padding: 1%;
     background-color: rgba(0,0,0, 0.4);
     transform: translate(0px, 0px);
 }
@@ -101,4 +104,6 @@ section.page{
     border-style: solid;
     margin-top: 50px;
     background-color: rgba(0,0,0, 0.4);
+    min-height: 800px;
+    max-height: 100%;
 }
