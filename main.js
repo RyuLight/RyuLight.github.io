@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     var isOpen = true;
-    
-    // Text to hover on
-    // const tips1Hover = document.querySelector("span#tips1");
-    // const tips2Hover = document.querySelector("span#tips2");
+
     const allTips = document.querySelectorAll("span[tips-id]");
 
     allTips.forEach(tips => {
@@ -51,24 +48,6 @@ document.addEventListener("DOMContentLoaded", function(){
             tooltip.style.left = (e.pageX - (tooltip.style.width - 20)) + "px";
         });
     });
-    
-
-    /* tips1Hover.onmouseover = function ()
-    {
-        tips1.style.display = "block";
-    };
-
-    tips1Hover.onmouseout = function ()
-    {
-        tips1.style.display = "none";
-    };
-
-    document.addEventListener("mousemove", function(e){
-        tips1.style.top = (e.pageY - tips1.style.height)+ "px";
-        tips1.style.left = (e.pageX - tips1.style.width) + "px";
-    }); */
-
-    // TESTING SHIT ABOVE
 
 
     mutebtn.style.backgroundColor = "white";
@@ -182,8 +161,7 @@ function resetSheepGame() {
         answer.style.display = "inline";
     });
     quiz.style.display = "none";
-    // maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
-    maxSheep = 10;
+    maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
     sheepCount = maxSheep;
     sheep1.style.transform = 'translate(1500px, 50px)';
     sheep2.style.transform = 'translate(1500px, 300px)';
