@@ -167,8 +167,7 @@ function resetSheepGame() {
         answer.style.display = "inline";
     });
     quiz.style.display = "none";
-    // maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
-    maxSheep = 1;
+    maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
     sheepCount = maxSheep;
 
     sheep1.style.transform = 'translate(1500px, 100px)';
