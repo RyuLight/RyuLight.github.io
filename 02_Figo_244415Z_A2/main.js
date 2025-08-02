@@ -18,10 +18,9 @@ document.addEventListener("DOMContentLoaded", function(){
     const mutebtn = document.querySelector("#mute");
     const closebtn = document.querySelector("#closeMenu");
     const menu = document.querySelector("#menu");
-    
+    const funnybtn = document.querySelector("#funnybtn");
     // Don't bother with this, just for fun
     {
-        const funnybtn = document.querySelector("#funnybtn");
     funnybtn.style.display = "none";
     setTimeout(function(){
         funnybtn.style.display = "inline";
@@ -30,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
     var isOpen = true;
 
-    const allTips = document.querySelectorAll("span[tips-id]");
+    const allTips = document.querySelectorAll("span[data-tips-id]");
 
     allTips.forEach(tips => {
-        const tooltip = document.getElementById(tips.getAttribute("tips-id"));
+        const tooltip = document.getElementById(tips.getAttribute("data-tips-id"));
 
         tips.onmouseover = function() {
             tooltip.style.display = "block";
@@ -76,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     pages.forEach(section => {
-        section.style.display="none"
+        section.style.display="none";
     });
     
     startPage.style.display="flex";
@@ -109,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 selectedPage.classList.toggle("moveAnim");
             });
             MenuAnim();
-    })
+    });
     });
 
     function MuteMusic(){
@@ -136,6 +135,13 @@ document.addEventListener("DOMContentLoaded", function(){
 const sheep1 = document.querySelector("#sheep1");
 const sheep2 = document.querySelector("#sheep2");
 const sheep3 = document.querySelector("#sheep3");
+
+const sheeps = [sheep1, sheep2, sheep3];
+
+sheeps.forEach(sheep => {
+    sheep.style.display = "none";
+});
+
 const startGame = document.querySelector("#startGame");
 var gameStart = false;
 var gameEnd = false;
@@ -163,12 +169,15 @@ function resetSheepGame() {
     quiz.style.display = "none";
     maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
     sheepCount = maxSheep;
-    sheep1.style.transform = 'translate(1500px, 50px)';
-    sheep2.style.transform = 'translate(1500px, 300px)';
-    sheep3.style.transform = 'translate(1500px, 550px)';
-    sheep1.style.display = 'inline';
-    sheep2.style.display = 'inline';
-    sheep3.style.display = 'inline';
+
+    sheep1.style.transform = 'translate(1500px, 100px)';
+    sheep2.style.transform = 'translate(1500px, 150px)';
+    sheep3.style.transform = 'translate(1500px, 200px)';
+
+    sheeps.forEach(sheep => {
+    sheep.style.display = "inline";
+    });
+
     for (let i = 1; i < 4; i++)
     {
         resetPosAndRand(i);
@@ -181,7 +190,7 @@ function resetSheepGame() {
     }
     gameStart = false;
     gameEnd = false;
-};
+}
 
 startGame.addEventListener("click", function(){
     let tutorial = document.querySelector("#tutorial");
@@ -250,7 +259,7 @@ function resetPosAndRand(number){
     }
 }
 
-let gamePlay = setInterval(function(){
+setInterval(function(){
     if (gameStart && !gameEnd)
     {
         newX1 -= moveSpeed1;
