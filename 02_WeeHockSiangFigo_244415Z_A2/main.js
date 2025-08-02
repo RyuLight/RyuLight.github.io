@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
         else if (bgm.muted == false)
         {
             bgm.muted = true;
-            mutebtn.textContent = "Muted, click to mute";
+            mutebtn.textContent = "Muted, click to unmute";
         }
     });
 
@@ -167,7 +167,8 @@ function resetSheepGame() {
         answer.style.display = "inline";
     });
     quiz.style.display = "none";
-    maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
+    // maxSheep = Math.floor(Math.random() * (51 - 10) + 10);
+    maxSheep = 1;
     sheepCount = maxSheep;
 
     sheep1.style.transform = 'translate(1500px, 100px)';
@@ -209,21 +210,18 @@ var moveSpeed3 = Math.random() * (30 - 5) + 5;
 
 function resetPosAndRand(number){
     
-    console.log(sheepCount);
     switch (number)
     {
         case 1:
             newX1 = 0;
             if (sheepCount <= 3)
             {
-                console.log("SHEEP 1 NO SPAWN");
                 sheep1.style.left = 0;
                 moveSpeed1 = 0;
                 sheep1.style.display = "none";
             }
             else
             {
-                console.log("SHEEP 1 SPAWNED LOL");
                 sheep1.style.left = 0;
                 moveSpeed1 = Math.random() * (30 - 5) + 5;
             }
@@ -340,5 +338,4 @@ function RandomizeAnswer(){
 
     let chosenButton = document.getElementById(`answer${rightAnswer}`);
     chosenButton.textContent = maxSheep;
-    console.log(chosenButton);
 }
